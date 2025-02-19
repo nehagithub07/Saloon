@@ -261,26 +261,27 @@
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 } */
-
 .slideshow-container { 
-  
+    padding: 12px 20px;
     max-width: 100%;
     position: relative;
     margin: auto;
     overflow: hidden;
+    text-align: center;
 }
 
 /* Image Styling */
 .slide-img {
-    width: 50%;
-    max-height: 500px;
+    width: 100%; /* Full width for responsiveness */
+    max-width: 800px; /* Prevents images from getting too large on big screens */
+    max-height: 600px;
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
 /* Hide slides by default */
 .mySlides {
     display: none;
-    text-align: center;
 }
 
 /* Navigation buttons */
@@ -289,14 +290,14 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 24px;
     border-radius: 50%;
     text-align: center;
-    line-height: 40px;
+    line-height: 50px;
     transition: 0.3s;
 }
 
@@ -336,27 +337,30 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .slide-img {
-        max-height: 300px;
+        max-width: 100%;
+        max-height: 400px;
     }
     .prev, .next {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         font-size: 18px;
-        line-height: 30px;
+        line-height: 40px;
     }
 }
 
 @media (max-width: 480px) {
     .slide-img {
-        max-height: 250px;
+        max-width: 100%;
+        max-height: 300px;
     }
     .prev, .next {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         font-size: 16px;
-        line-height: 25px;
+        line-height: 30px;
     }
 }
+
 /* Service Section */
 .service-item {
     position: relative;
@@ -515,14 +519,13 @@
     opacity: 1;
 }
 
-
 /*** Footer ***/
 .footer .btn.btn-link {
     display: block;
     margin-bottom: 5px;
     padding: 0;
     text-align: left;
-    color: var(--light);
+    color: var(--light, #f8f9fa); /* Default light color */
     font-size: 15px;
     font-weight: normal;
     text-transform: capitalize;
@@ -535,10 +538,11 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 10px;
+    display: inline-block;
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--primary);
+    color: var(--primary, #007bff); /* Default primary color */
     letter-spacing: 1px;
     box-shadow: none;
 }
@@ -546,17 +550,22 @@
 .footer .copyright {
     padding: 1.5rem;
     font-size: 15px;
-    background: var(--dark);
+    background: var(--dark, #343a40); /* Default dark color */
+    text-align: center;
 }
 
 .footer .copyright a {
-    color: var(--light);
+    color: var(--light, #f8f9fa);
+    text-decoration: none;
 }
 
 .footer .copyright a:hover {
-    color: var(--primary);
+    color: var(--primary, #007bff);
 }
-.pack1{
+
+/*** Fix for missing gradient ***/
+.pack1 {
     height: 20%;
-    background:linear-gradient();
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Example gradient */
+    border-radius: 5px;
 }
