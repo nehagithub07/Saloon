@@ -531,6 +531,9 @@
     text-transform: capitalize;
     transition: .3s;
 }
+.footer a:hover {
+    color: rgba(136, 12, 12, 0.959) !important; /* Change color on hover */
+}
 
 .footer .btn.btn-link::before {
     position: relative;
